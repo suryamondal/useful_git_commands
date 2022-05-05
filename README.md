@@ -14,5 +14,5 @@ So, we create a folder/directory named `useful_git_commands`. The we go inside i
 ```
 git init
 ```
-This creates a directory named `.git` inside `useful_git_commands` and creates all the necessary objects inside it. **We, amatures, must never cause any harm to this one.**
+This creates a directory named `.git` inside `useful_git_commands` and fills it with all the necessary objects. **We, amatures, must never cause any harm to this one.**
 
