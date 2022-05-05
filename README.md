@@ -3,12 +3,12 @@
 
 The concept of `git` is simplicity. The main point of git is that one does need to create new file or folder to keep track of the evolution (or changes) of a project.
 
-The main byproduct of this notions is that; `git` also can track the evulution of a project with multiple contributors.
+The main byproduct of this notions is that; `git` also can track the evolution of a project with multiple contributors.
 
 For me, I use `git` along with `github`  also for coping the codes between two or more terminals. It is really quicker and efficient than use `rsync` for these small ASCII files.
 
 ### Local Repository:
-A git `repository` is synonymus to a `folder` or `directory`, but actualy not. A git repository resides inside a folder, and that is the end of the similarity. We do not want to create multiple copy of the same objects when moving to a new versions.
+A git `repository` is synonymous to a `folder` or `directory`, but actually not. A git repository resides inside a folder, and that is the end of the similarity. We do not want to create multiple copy of the same objects when moving to a new versions.
 
 So, we create a folder/directory named `useful_git_commands`. Then we go inside it. We then execute the following command.
 ```
@@ -32,11 +32,11 @@ We have added one file to git. Now we need to commit it. Execute the following c
 git commit -am "First Commit"
 ```
 **Note**:
-- If you do not use the `-a` flag, only the files in the stagged are are commited. There may be situations where some modified files might be in the `unstagged` area. You need to execute `git add path/to/file` to bring them into staging are. And then commit using `git commit -m "some messege"`. This is useful if you need to commit files seperately.
-- If you do not use the `-m` flag, an editor (i.e. nano, vim, etc.) will be opened. Write the messege there. Then save and exit. Commit is over. You can change the choice of default editor.
+- If you do not use the `-a` flag, only the files in the staged are are committed. There may be situations where some modified files might be in the `unstated` area. You need to execute `git add path/to/file` to bring them into staging are. And then commit using `git commit -m "some message"`. This is useful if you need to commit files separately.
+- If you do not use the `-m` flag, an editor (i.e. nano, vim, etc.) will be opened. Write the message there. Then save and exit. Commit is over. You can change the choice of default editor.
 
 ### Check the status of git:
-The following command display the status. Any files modified, stagged or unstagged are displayer here.
+The following command display the status. Any files modified, staged or unstaged are displayed here.
 ```
 git status
 ```
@@ -54,7 +54,7 @@ Execute the following command to add a `remote` repository to your `local` repos
 ```
 git remote add origin1 git@github.com:suryamondal/useful_git_commands.git
 ```
-Where, `origin1` is sort of an alias to the remote repository. You can have as many as `origin`s if you want to push/pull from any of them. This is perticularly useful if you want to keep a copy of your code to a seperate repository.
+Where, `origin1` is sort of an alias to the remote repository. You can have as many as `origin`s if you want to push/pull from any of them. This is particularly useful if you want to keep a copy of your code to a separate repository.
 
 ### Push to a remote repository:
 To push the branch `main` to `origin1`, execute the following.
