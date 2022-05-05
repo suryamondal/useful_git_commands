@@ -48,7 +48,11 @@ git branch -M main
 Now we are ready to `push` this to a `remote repository`.
 
 ### Remote Repository:
-This is an exact copy of the local repository.
+This will be an exact copy of the local repository. For this,
+- You need to have account on a `git` server (i.e. `github`, `bitbucket`, `gitlab`, etc.).
+- Upload your `SSH Keys` to the servers. Follow [this link](https://github.com/suryamondal/ssh_and_github) for details.
+- You need to create an empty repository in server (say, `useful_git_commands`).
+- Copy the link of the remote (find it in Clone->SSH tab). Then
 
 Execute the following command to add a `remote` repository to your `local` repository. 
 ```
@@ -106,7 +110,7 @@ If you do not have permission to edit a remote repository, there are two ways to
 # GIT DIFF
 This is probably the most interesting command of all, if used properly. It can be used in may way.
 - `git diff` : It shows the changes you have done after the last commit
-- `git diff main` : This shows the difference (committed) between `main` and this branch.
+- `git diff main` : This shows the (committed) difference between `main` and this branch.
 - any other possible combinations.
 ### GIT LOG
 I usually push the changes to remote, and then browse it on a browser to check the logs. But one might can execute `git log` to see the commit log.
