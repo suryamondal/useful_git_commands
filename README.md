@@ -32,7 +32,7 @@ We have added one file to git. Now we need to commit it. Execute the following c
 git commit -am "First Commit"
 ```
 **Note**:
-- If you do not use the `-a` flag, only the files in the staged are are committed. There may be situations where some modified files might be in the `unstated` area. You need to execute `git add path/to/file` to bring them into staging are. And then commit using `git commit -m "some message"`. This is useful if you need to commit files separately.
+- If you do not use the `-a` flag, only the files in the staged are are committed. There may be situations where some modified files might be in the `unstaged` area. You need to execute `git add path/to/file` to bring them into staging are. And then commit using `git commit -m "some message"`. This is useful if you need to commit files separately.
 - If you do not use the `-m` flag, an editor (i.e. nano, vim, etc.) will be opened. Write the message there. Then save and exit. Commit is over. You can change the choice of default editor.
 
 ### Check the status of git:
