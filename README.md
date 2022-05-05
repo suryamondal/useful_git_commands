@@ -98,8 +98,8 @@ git checkout bugfix/add-menu
 Then commit, push, pull using this branch name.
 
 ## Forks
-If you do not have permission to edit a remote repository, there are two ways to get it to your remote.
-1. Clone it, then push it to your remote repository.
+If you do not have permission to edit a remote repository, there are two ways to get it to your own remote.
+1. Clone it, then push it to your own remote repository.
    - Add the original remote as `origin2`.
    - You can `pull` from the `origin2`, in case any changes in there.
    - Both are detached, and thus cannot be compared directly.
