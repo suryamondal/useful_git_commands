@@ -99,13 +99,13 @@ Then commit, push, pull using this branch name.
 
 ## Forks
 If you do not have permission to edit a remote repository, there are two ways to get it to your remote.
-1. Clone it, then push it to your remote repository. But in this case, both are detached, and thus cannot be compared directly.
-2. Create a `fork` of that remote, and then `clone` the `fork`.
-   - Add the original remote as `origin1`.
-   - Rename the forked remote from `origin` to `origin2`.
-   - You able to compare both the repositories.
-   - This way, might still `pull` from the `origin1`, in case any changes in there.
-   - You can create a `pull request` from `origin2` to `origin1`.
+1. Clone it, then push it to your remote repository.
+   - Add the original remote as `origin2`.
+   - You can `pull` from the `origin2`, in case any changes in there.
+   - Both are detached, and thus cannot be compared directly.
+2. Create a `fork` of that remote, and then `clone` the `fork`. This gives the following added advantages.
+   - You will be able to compare both the repositories.
+   - You can create a `pull request` from `origin1` to `origin2`.
 
 # GIT DIFF
 This is probably the most interesting command of all, if used properly. It can be used in may way.
