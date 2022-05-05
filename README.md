@@ -78,13 +78,6 @@ git pull                : if you want to pull from the default remote
 git pull origin1 main   : if you want to pull from a specific remote and branch
 ```
 
-### Push to a remote repository:
-Now say, you pushed a branch to `origin1` from a different terminal. You want to get the changes it to a new terminal.
-To push the branch `main` to `origin1`, execute the following.
-```
-git push -u origin1 main
-```
-
 ### Creating a new branch
 Now we are in the `main` branch. **We should never edit the main branch directly**. Always create a branch, edit and test everything there. Then merge it to the `main` using a `pull request`.
 
