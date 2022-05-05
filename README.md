@@ -102,7 +102,7 @@ If you do not have permission to edit a remote repository, there are two ways to
 1. Clone it, then push it to your remote repository. But in this case, both are detached, and thus cannot be compared directly.
 2. Create a `fork` of that remote, and then `clone` the `fork`.
    - Add the original remote as `origin1`.
-   - Add the forked remote as `origin2`.
+   - Rename the forked remote from `origin` to `origin2`.
    - You able to compare both the repositories.
    - This way, might still `pull` from the `origin1`, in case any changes in there.
    - You can create a `pull request` from `origin2` to `origin1`.
