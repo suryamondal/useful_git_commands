@@ -12,20 +12,23 @@ For me, I use `git` along with `github`  also for coping the codes between two o
 
 
 ## Flow of git methods:
-There are mainly three ways to initialise a git repository. Please continue reading for more explanation.
+There are mainly three ways to initialise a `local` git repository. Please continue reading for more details.
 ```mermaid
 graph TD;
-    id1[Make a dir and go in it]-->id2[git init]-->id3[git add path/to/file]-->id4[git commit]-->id6[git branch -M main];
+    id17[git status]-->id18[git log]-->id5[git diff]-->id36[git reflog]-->id17;
+    id0[In local terminal]-->id1[Make a dir and go in it]-->id2[git init]-->id3[git add path/to/file]-->id4[git commit]-->id6[git branch -M main];
     id6-->id7[git remote add origin1 url/to/remote/repository]-->id8[git push -u origin1 main];
     id8-->id9[git branch newbranch]-->id10[git checkout newbranch]-->id11[git add newfile]-->id12[git commit]-->id13[git push -u origin1 newbranch];
     id13-->id14[Create a pull request in github]-->id15[Merge newbranch with main]-->id19[git checkout main]-->id9;
     id14-->id16[Change if required]-->id11;
     id10-->id35[git pull]-->id11;
     id10-->id34[git pull origin2 branchname]-->id11;
-    id20[git clone url/to/remote/repository]-->id21[Go into the dir]-->id26[git remote rename origin origin1]-->id9;
+    id41[Create an empty remote repository]-->id20[git clone url/to/remote/repository]-->id21[Go into the dir]
+    id21-->id26[git remote rename origin origin1]-->id9;
+    id43[Existing remote repository]-->id40[without edit permission]-->id22;
+    id43-->id44[with edit permission]-->id20;
     id22[Create a fork]-->id23[git clone url/to/forked/repository]-->id24[Go in the dir]-->id25[git remote rename origin origin1];
     id25-->id27[git remote add origin2 url/to/original/repository]-->id9;
-    id17[git status]-->id18[git log]-->id5[git diff]-->id36[git reflog]-->id17;
     id13-->id30[git checkout main]-->id31[git pull]-->id32[git checkout newbranch]-->id33[git merge main]-->id11;
 ```
 
