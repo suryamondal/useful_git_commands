@@ -97,6 +97,14 @@ git checkout bugfix/add-menu
 
 Then commit, push, pull using this branch name.
 
+## Pull Requests
+Once your branch is ready and working, it is time to merge it with the `main`. For this,
+- First create a `pull request` in `github`. You may add reviewers for this operation.
+- Discussion thread is available in each pull request. Discuss anything if there is conflicts.
+- Do the changes required, commit, push; if required, then multiple time.
+- With each push, the pull request will also get updated.
+- Once all the reviewers have approved the request, you can go ahead to `merge` your branch with `main`.
+
 ## Forks
 If you do not have permission to edit a remote repository, there are two ways to get it to your own remote.
 1. Clone it, then push it to your own remote repository.
