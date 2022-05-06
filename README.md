@@ -26,8 +26,14 @@ graph TD;
     id10-->id34[git pull origin2 branchname]-->id11;
     id41[Create an empty remote repository]-->id20[git clone url/to/remote/repository]-->id21[Go into the dir]
     id21-->id26[git remote rename origin origin1]-->id9;
-    id43[Existing remote repository]-->id40[without edit permission]-->id22;
-    id43-->id44[with edit permission]-->id20;
+    id60[Remote repository]--Exists-->id43;
+    id60--Does not exists-->id41;
+    id43[Existing remote repository]--If fork can be created-->id22;
+    id43--without edit permission-->id50[git clone url/to/remote/repository]-->id55[git remote rename origin origin2];
+    id55-->id51[Create your own empty remote repository]-->id54[Go into the dir];
+    id54-->id52[git remote add origin1 url/to/empty/remote/repository]-->id53[git push -u origin1 --all]-->id9;
+    %% id53-->id54[];
+    id43--with edit permission-->id20;
     id22[Create a fork]-->id23[git clone url/to/forked/repository]-->id24[Go in the dir]-->id25[git remote rename origin origin1];
     id25-->id27[git remote add origin2 url/to/original/repository]-->id9;
     id13-->id30[git checkout main]-->id31[git pull]-->id32[git checkout newbranch]-->id33[git merge main]-->id13;
