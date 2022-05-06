@@ -1,11 +1,33 @@
 # Some useful git commands and the use of those
-*Here I listed some of the git commands and how to use them efficiently. You no need to be a professional to use it. Git supposed to be for all. This tutorial is only for the people who does not want to be a professional.*
 
-The concept of `git` is simplicity. The main point of git is that one does need to create new file or folder to keep track of the evolution (or changes) of a project.
+*Here I listed some of the git commands and how to use them efficiently or not-efficiently. Git supposed to be for all. This tutorial is thus probably not for professionals.*
 
-The main byproduct of this notions is that; `git` also can track the evolution of a project with multiple contributors.
+The main goal of `git` is that one does need to create new file or folder to keep track of the evolution (or changes) of a project.
+
+The crucial byproduct of this notions is that; `git` also can track the evolution of a project with multiple contributors.
+
+**AND Yes, you can use git without github or bitbucket!!! These are required when you want to push your code to remote repository.**
 
 For me, I use `git` along with `github`  also for coping the codes between two or more terminals. It is really quicker and efficient than use `rsync` for these small ASCII files.
+
+
+## Flow of git methods:
+There are mainly three ways to initialise a git repository. Please continue reading for more explanation.
+```mermaid
+graph TD;
+    id1[Make a dir and go in it]-->id2[git init]-->id3[git add path/to/file]-->id4[git commit]-->id6[git branch -M main];
+    id6-->id7[git remote add origin1 url/to/remote/repository]-->id8[git push -u origin1 main];
+    id8-->id9[git branch newbranch]-->id10[git checkout newbranch]-->id11[git add newfile]-->id12[git commit]-->id13[git push -u origin1 newbranch];
+    id13-->id14[Create a pull request in github]-->id15[Merge newbranch with main]-->id19[git checkout main]-->id9;
+    id14-->id16[Change if required]-->id11;
+    id10-->id35[git pull]-->id11;
+    id10-->id34[git pull origin2 branchname]-->id11;
+    id20[git clone url/to/remote/repository]-->id21[Go into the dir]-->id26[git remote rename origin origin1]-->id9;
+    id22[Create a fork]-->id23[git clone url/to/forked/repository]-->id24[Go in the dir]-->id25[git remote rename origin origin1];
+    id25-->id27[git remote add origin2 url/to/original/repository]-->id9;
+    id17[git status]-->id18[git log]-->id5[git diff]-->id36[git reflog]-->id17;
+    id13-->id30[git checkout main]-->id31[git pull]-->id32[git checkout newbranch]-->id33[git merge main]-->id11;
+```
 
 ### Local Repository:
 A git `repository` is synonymous to a `folder` or `directory`, but actually not. A git repository resides inside a folder, and that is the end of the similarity. We do not want to create multiple copy of the same objects when moving to a new versions.
