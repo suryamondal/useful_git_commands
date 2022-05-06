@@ -19,11 +19,11 @@ graph TD;
     id0[In local terminal]-->id1[Make a dir and go in it]-->id2[git init]-->id3[git add path/to/file]-->id4[git commit]-->id6[git branch -M main];
     id6-->id7[git remote add origin1 url/to/remote/repository]-->id8[git push -u origin1 main];
     id8-->id9[git branch newbranch]-->id10[git checkout newbranch]-->id11[git add newfile]-->id12[git commit]-->id13[git push -u origin1 newbranch];
-    id13-->id11;
+    id13-.->id11;
     id13-->id14[Create a pull request in github]-->id15[Merge newbranch with main]-->id19[git checkout main]-->id9;
-    id14-->id16[Change if required]-->id11;
+    id14--Change if required-->id11;
     id10-->id35[git pull]-->id11;
-    id10-->id34[git pull origin2 branchname]-->id11;
+    id10-.->id34[git pull origin2 branchname]-.->id11;
     id41[Create an empty remote repository]-->id20[git clone url/to/remote/repository]-->id21[Go into the dir]
     id21-->id26[git remote rename origin origin1]-->id9;
     id60[Remote repository]--Exists-->id43;
@@ -32,11 +32,10 @@ graph TD;
     id43--without edit permission-->id50[git clone url/to/remote/repository]-->id55[git remote rename origin origin2];
     id55-->id51[Create your own empty remote repository]-->id54[Go into the dir];
     id54-->id52[git remote add origin1 url/to/empty/remote/repository]-->id53[git push -u origin1 --all]-->id9;
-    %% id53-->id54[];
     id43--with edit permission-->id20;
     id22[Create a fork]-->id23[git clone url/to/forked/repository]-->id24[Go in the dir]-->id25[git remote rename origin origin1];
     id25-->id27[git remote add origin2 url/to/original/repository]-->id9;
-    id13-->id30[git checkout main]-->id31[git pull]-->id32[git checkout newbranch]-->id33[git merge main]-->id13;
+    id13-.->id30[git checkout main]-.->id31[git pull]-.->id32[git checkout newbranch]-.->id33[git merge main]-.->id13;
 ```
 
 ### Local Repository:
