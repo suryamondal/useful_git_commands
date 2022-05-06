@@ -19,6 +19,7 @@ graph TD;
     id0[In local terminal]-->id1[Make a dir and go in it]-->id2[git init]-->id3[git add path/to/file]-->id4[git commit]-->id6[git branch -M main];
     id6-->id7[git remote add origin1 url/to/remote/repository]-->id8[git push -u origin1 main];
     id8-->id9[git branch newbranch]-->id10[git checkout newbranch]-->id11[git add newfile]-->id12[git commit]-->id13[git push -u origin1 newbranch];
+    id13-->id11;
     id13-->id14[Create a pull request in github]-->id15[Merge newbranch with main]-->id19[git checkout main]-->id9;
     id14-->id16[Change if required]-->id11;
     id10-->id35[git pull]-->id11;
@@ -29,7 +30,7 @@ graph TD;
     id43-->id44[with edit permission]-->id20;
     id22[Create a fork]-->id23[git clone url/to/forked/repository]-->id24[Go in the dir]-->id25[git remote rename origin origin1];
     id25-->id27[git remote add origin2 url/to/original/repository]-->id9;
-    id13-->id30[git checkout main]-->id31[git pull]-->id32[git checkout newbranch]-->id33[git merge main]-->id11;
+    id13-->id30[git checkout main]-->id31[git pull]-->id32[git checkout newbranch]-->id33[git merge main]-->id13;
 ```
 
 ### Local Repository:
