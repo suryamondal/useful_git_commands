@@ -156,3 +156,9 @@ I usually push the changes to remote, and then browse it on a browser to check t
 
 ### GIT REFLOG
 This shows the position of `head`. This is useful if you want to reset to any previous commit, using `git reset --hard bd6903f`. But please try not use it.
+
+### In case a large file is added to git
+```
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch path/to/file' --prune-empty --tag-name-filter cat -- --all
+git push origin1 --force --all
+```
