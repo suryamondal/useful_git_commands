@@ -1,37 +1,34 @@
+# Mandatory Introduction
 Human memory is volatile. We keep forgetting things we `committed` yesterday.
 Here comes `git` to help us.
 
 `git` is a nice tool to track the changes of any document, from a piece of code to a latex report.
 With this, one not only `saves` a document, but saves the version of the document as it evolves.
 
+**There can be hundreds of objects in a directory. The beauty is that, `git` only track those, which
+you instruct it to do. It never touches any `data`. This is important when you are running jobs
+on a cluster. You can quickly change the code in your local machine, then push it to remote,
+then pull it to the cluster. This saves time as you do not need to involve `rsync` in this.**
+
 `GitGub`, `GitLab`, `BitBucket`, etc. uses the same `git` to host the documents tracked by `git`
 in our local machine. This gives us more advantages.
 - the graphical representation is better than a terminal.
-- One can keep a `remote` copy of the work done in `local` machine.
-- One can keep the `remote` public, so that others can see/use it.
-- A team of people can collaborate on the same project. Other can discuss and verify before a change
+- working on the same code from multiple terminals. **Most important to me**
+- one can keep a `remote` copy of the work done in `local` machine.
+- one can keep the `remote` public, so that others can see/use it.
+- a team of people can collaborate on the same project. Other can discuss and verify before a change
 is incorporated in the project.
 
 # Usefulness of `git` 
 ![git_tree](https://github.com/suryamondal/useful_git_commands/blob/main/backup/git_tree.png?raw=true)
 
-In the above tree, + blue + is the `main` branch. Nobody touch it directly. One creates a branch of
+In the above tree, `blue` is the `main` branch. Nobody touches it directly. One creates a branch of
 `main` (shown in `green` and `magenta`) and work in that branch only. Once the testing is satisfied,
 one can create a `pull request` to `merge` the branch with `main`. One might add `reviewers` with
 the request. Upon approval from all the reviewers, the branch can be merged to main.
 
 # Some useful git commands and the uses of those
-
-*Here I listed some of the git commands and how to use them efficiently or not-efficiently. Git supposed to be for all. This tutorial is thus probably not for professionals.*
-
-The main goal of `git` is that one does need to create new file or folder to keep track of the evolution (or changes) of a project.
-
-The crucial byproduct of this notions is that; `git` also can track the evolution of a project with multiple contributors.
-
-**AND Yes, you can use git without github or bitbucket!!! These are required when you want to push your code to remote repository.**
-
-For me, I use `git` along with `github`  also for coping the codes between two or more terminals. It is really quicker and efficient than use `rsync` for these small ASCII files.
-
+*Here I listed some of the git commands and how to use them efficiently or not-efficiently.*
 
 ## Flow of git methods:
 There are mainly three ways to initialise a `local` git repository. Please continue reading for more details.
