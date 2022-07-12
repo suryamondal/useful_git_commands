@@ -12,6 +12,7 @@ in our local machine. This gives us more advantages.
 - A team of people can collaborate on the same project. Other can discuss and verify before a change
 is incorporated in the project.
 
+# Usefulness of `git` 
 ![git_tree](https://github.com/suryamondal/useful_git_commands/blob/main/backup/git_tree.png?raw=true)
 
 # Some useful git commands and the uses of those
