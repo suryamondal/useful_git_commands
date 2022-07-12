@@ -1,15 +1,18 @@
-Human memory is volatile. We keep forgetting something which we did yesterday.
+Human memory is volatile. We keep forgetting things we `committed` yesterday.
 Here comes `git` to help us.
 
-`git` is a nice way to track the changes of any document, from a piece of code to a latex report.
+`git` is a nice tool to track the changes of any document, from a piece of code to a latex report.
 With this, one not only `saves` a document, but saves the version of the document as it evolves.
 
 `GitGub`, `GitLab`, `BitBucket`, etc. uses the same `git` to host the documents tracked by `git`
-in our local machine. This gives use more advantages.
+in our local machine. This gives us more advantages.
+- the graphical representation is better than a termial.
 - One can keep a `remote` copy of the work done in `local` machine.
 - One can keep the `remote` public, so that others can see/use it.
 - A team of people can collaborate on the same project. Other can discuss and verify before a change
 is incorporated in the project.
+
+![git_tree](https://github.com/suryamondal/useful_git_commands/blob/main/backup/git_tree.png?raw=true)
 
 # Some useful git commands and the uses of those
 
