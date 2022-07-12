@@ -5,7 +5,7 @@ Here comes `git` to help us.
 `git` is a nice tool to track the changes of any document, from a piece of code to a latex report.
 With this, one not only `saves` a document, but saves the version of the document as it evolves.
 
-**There can be hundreds of objects in a directory. The beauty is that, `git` only track those, which
+**There can be hundreds of objects in a directory. The beauty is that, `git` only tracks those, which
 you instruct it to do. It never touches any `data`. This is important when you are running jobs
 on a cluster. You can quickly change the code in your local machine, then push it to remote,
 then pull it to the cluster. This saves time as you do not need to involve `rsync` in this.**
@@ -19,7 +19,7 @@ in our local machine. This gives us more advantages.
 - a team of people can collaborate on the same project. Other can discuss and verify before a change
 is incorporated in the project.
 
-# Usefulness of `git` 
+# BRANCH: Main usefulness of `git`
 ![git_tree](https://github.com/suryamondal/useful_git_commands/blob/main/backup/git_tree.png?raw=true)
 
 In the above tree, `blue` is the `main` branch. Nobody touches it directly. One creates a branch of
@@ -58,7 +58,8 @@ graph TD;
 ```
 
 ### Local Repository:
-A git `repository` is synonymous to a `folder` or `directory`, but actually not. A git repository resides inside a folder, and that is the end of the similarity. We do not want to create multiple copy of the same objects when moving to a new versions.
+A git `repository` is synonymous to a `folder` or `directory`, but actually not. A git repository
+resides inside a physical directory, and that is the end of the similarity.
 
 So, we create a folder/directory named `useful_git_commands`. Then we go inside it. We then execute the following command.
 ```
@@ -67,22 +68,22 @@ git init
 This creates a directory named `.git` inside `useful_git_commands` and fills it with all the necessary objects. **We, amateurs, must never cause any harm to this one.**
 
 ### Create a readme file:
-In git, it is must to have a `README.md` file. It should be in plain ASCII. Please follow [this link](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) to know how to format this file.
+In git, it is must to have a `README.md` file. It should be in plain ASCII. Please follow [this link](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) to know more on how to format it with beauty.
 
 ### Make git to track a file:
-Git does not automatically track all the files in a repository. We need to `add` the specific files to `git`.
-A file can be added to `git` using the following command,
+Git does not automatically track all the files in a directory. We need to `add` the specific files
+to `git`. A file can be added to `git` using the following command,
 ```
 git add README.md
 ```
 
 ### First commit:
-We have added one file to git. Now we need to commit it. Execute the following command to commit.
+We have added one file to git. Now we need to `commit` it. Execute the following command to commit.
 ```
 git commit -am "First Commit"
 ```
 **Note**:
-- If you do not use the `-a` flag, only the files in the staged are are committed. There may be situations where some modified files might be in the `unstaged` area. You need to execute `git add path/to/file` to bring them into staging are. And then commit using `git commit -m "some message"`. This is useful if you need to commit files separately.
+- If you do not use the `-a` flag, only the files `staged` are are committed. There may be situations where some modified files might be in the `unstaged` area. You need to execute `git add path/to/file` to bring them into staging are. And then commit using `git commit -m "some message"`. This is useful if you need to commit files separately.
 - If you do not use the `-m` flag, an editor (i.e. nano, vim, etc.) will be opened. Write the message there. Then save and exit. Commit is over. You can change the choice of default editor.
 
 ### Check the status of git:
@@ -108,7 +109,7 @@ Execute the following command to add a `remote` repository to your `local` repos
 ```
 git remote add origin1 git@github.com:suryamondal/useful_git_commands.git
 ```
-Where, `origin1` is sort of an alias to the remote repository. You can have as many as `origin`s if you want to push/pull from any of them. This is particularly useful if you want to keep a copy of your code to a separate repository.
+Where, `origin1` is sort of an alias to the remote repository. You can have as many as origins if you want to push/pull from any of them. This is particularly useful if you want to keep a copy of your code to multiple repository.
 
 ### Push to a remote repository:
 To push the branch `main` to `origin1`, execute the following.
@@ -116,8 +117,8 @@ To push the branch `main` to `origin1`, execute the following.
 git push -u origin1 main
 ```
 
-### Clone a remote repository to local terminal:
-Now say, you pushed a branch to `origin1` from a different terminal. You want to get the it to a new terminal.
+### Clone a remote repository to another terminal:
+Now say, you pushed a branch to `origin1` from a terminal. You want to get the it to a new terminal.
 Just execute the following.
 ```
 git clone git@github.com:suryamondal/useful_git_commands.git
@@ -125,12 +126,6 @@ git clone git@github.com:suryamondal/useful_git_commands.git
 This will create a directory named `useful_git_commands` with all the files and `.git` folder.
 
 **Warning:** In this local repository, the alias to `remote` is set as `origin` by default. You might rename it using `git remote rename origin origin1`. 
-
-### Pull the changes from a remote, you pushed from a different terminal
-```
-git pull                : if you want to pull from the default remote
-git pull origin1 main   : if you want to pull from a specific remote and branch
-```
 
 ### Creating a new branch
 Now we are in the `main` branch. **We should never edit the main branch directly**. Always create a branch, edit and test everything there. Then merge it to the `main` using a `pull request`.
@@ -147,11 +142,19 @@ git checkout bugfix/add-menu
 
 Then commit, push, pull using this branch name.
 
+### Pull the changes from a remote, you pushed from a different terminal
+```
+git pull                : if you want to pull from the default remote
+git pull origin1 main   : if you want to pull from a specific remote and branch (use carefully)
+```
+With `git pull`, the branch `bugfix/add-menu` will also be loaded in this local machine.
+use `git checkout bugfix/add-menu` to start editing the branch in this machine.
+
 ## Pull Requests
-Once your branch is ready and working, it is time to merge it with the `main`. For this,
+Once your branch is ready and tested, it is time to merge it with the `main`. For this,
 - First create a `pull request` in `github`. You may add reviewers for this operation.
 - Discussion thread is available in each pull request. Discuss anything if there is conflicts.
-- Do the changes required, commit, push; if required, then multiple time.
+- Do the changes if required, then commit, push; if required, then in multiple iterations.
 - With each push, the pull request will also get updated.
 - Once all the reviewers have approved the request, you can go ahead to `merge` your branch with `main`.
 
@@ -160,7 +163,7 @@ If you do not have permission to edit a remote repository, there are two ways to
 1. Clone it, then push it to your own remote repository.
    - Add the original remote as `origin2`.
    - You can `pull` from the `origin2`, in case any changes in there.
-   - Both are detached, and thus cannot be compared directly.
+   - Disadvantage: Both are detached, and thus cannot be compared directly.
 2. Create a `fork` of that remote, and then `clone` the `fork`. This gives the following added advantages.
    - You will be able to compare both the repositories.
    - You can create a `pull request` from `origin1` to `origin2`.
@@ -170,13 +173,14 @@ This is probably the most interesting command of all, if used properly. It can b
 - `git diff` : It shows the changes you have done after the last commit
 - `git diff main` : This shows the (committed) difference between `main` and this branch.
 - any other possible combinations.
+
 ### GIT LOG
-I usually push the changes to remote, and then browse it on a browser to check the logs. But one might can execute `git log` to see the commit log.
+I usually push the changes to remote, and then browse it on a browser to check the logs. But one might execute `git log` in local machine to see the commit log.
 
 ### GIT REFLOG
-This shows the position of `head`. This is useful if you want to reset to any previous commit, using `git reset --hard bd6903f`. But please try not use it.
+This shows the position of `head`. It is useful if you want to reset to any previous commit, using `git reset --hard bd6903f`. But please try not use it, better to go for another commit.
 
-### In case a large file is added to git
+### In case a large file is added to git and it is needed to be removed from each commit
 ```
 git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch path/to/file' --prune-empty --tag-name-filter cat -- --all
 git push origin1 --force --all
