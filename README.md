@@ -14,10 +14,11 @@ is incorporated in the project.
 
 # Usefulness of `git` 
 ![git_tree](https://github.com/suryamondal/useful_git_commands/blob/main/backup/git_tree.png?raw=true)
-In the above tree, +blue+ is the `main` branch. Nobody touch it directly. One creates a branch of
-`main` and work in that branch only. Once the testing is satisfied, one can create a `pull request` to
-`merge` the branch with `main`. One might add `reviewers` with the request. Upon approval from all
-the reviewers, the branch can be merged to main.
+
+In the above tree, + blue + is the `main` branch. Nobody touch it directly. One creates a branch of
+`main` (shown in `green` and `magenta`) and work in that branch only. Once the testing is satisfied,
+one can create a `pull request` to `merge` the branch with `main`. One might add `reviewers` with
+the request. Upon approval from all the reviewers, the branch can be merged to main.
 
 # Some useful git commands and the uses of those
 
