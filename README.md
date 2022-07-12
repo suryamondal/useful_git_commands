@@ -1,4 +1,17 @@
-# Some useful git commands and the use of those
+Human memory is volatile. We keep forgetting something which we did yesterday.
+Here comes `git` to help us.
+
+`git` is a nice way to track the changes of any document, from a piece of code to a latex report.
+With this, one not only `saves` a document, but saves the version of the document as it evolves.
+
+`GitGub`, `GitLab`, `BitBucket`, etc. uses the same `git` to host the documents tracked by `git`
+in our local machine. This gives use more advantages.
+- One can keep a `remote` copy of the work done in `local` machine.
+- One can keep the `remote` public, so that others can see/use it.
+- A team of people can collaborate on the same project. Other can discuss and verify before a change
+is incorporated in the project.
+
+# Some useful git commands and the uses of those
 
 *Here I listed some of the git commands and how to use them efficiently or not-efficiently. Git supposed to be for all. This tutorial is thus probably not for professionals.*
 
