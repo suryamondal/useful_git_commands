@@ -132,7 +132,8 @@ Now we are in the `main` branch. **We should never edit the main branch directly
 
 To create a branch say, `bugfix/add-menu`, use the following command.
 ```
-git branch bugfix/add-menu
+git branch bugfix/add-menu                  : if from the latest commit
+git branch bugfix/add-menu <sha1-of-commit> : if from a previous commit (use 'git log' to get sha hash)
 ```
 
 Go to the branch using,
@@ -176,11 +177,6 @@ This is probably the most interesting command of all, if used properly. It can b
 
 ### GIT LOG
 I usually push the changes to remote, and then browse it on a browser to check the logs. But one might execute `git log` in local machine to see the commit log.
-
-## Create a branch from a previous commit
-```
-git branch newbranchname <sha1-of-commit>
-```
 
 ### GIT REFLOG
 This shows the position of `head`. It is useful if you want to reset to any previous commit, using `git reset --hard bd6903f`. But please try not use it, better to go for another commit.
