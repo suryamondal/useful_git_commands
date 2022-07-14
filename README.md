@@ -179,7 +179,7 @@ This is probably the most interesting command of all, if used properly. It can b
 I usually push the changes to remote, and then browse it on a browser to check the logs. But one might execute `git log` in local machine to see the commit log.
 
 ### GIT REFLOG
-This shows the position of `head`. It is useful if you want to reset to any previous commit, using `git reset --hard bd6903f`. But please try not use it, better to go for another commit.
+This shows the position of `head`. It is useful if you want to reset to any previous commit, using `git reset --hard bd6903f`. But please try not use it, better to create a branch from that specific commit. It is written above.
 
 ### In case a large file is added to git and it is needed to be removed from each commit
 ```
