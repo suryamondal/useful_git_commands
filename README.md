@@ -30,6 +30,19 @@ the request. Upon approval from all the reviewers, the branch can be merged to m
 # Some useful git commands and the uses of those
 *Here I listed some of the git commands and how to use them efficiently or not-efficiently.*
 
+## GIT Manuals
+Git has extended manual in Linux. Use the following methods to browse.
+```
+man git
+man git-branch
+man git-mv
+man git-log
+man git-diff
+.......
+.......
+```
+One thing to note here. Manual for `git branch` is written in `git-branch`. The `hyphen` is necessary. 
+
 ## Flow of git methods:
 There are mainly three ways to initialise a `local` git repository. Please continue reading for more details.
 ```mermaid
@@ -171,12 +184,17 @@ If you do not have permission to edit a remote repository, there are two ways to
 
 # GIT DIFF
 This is probably the most interesting command of all, if used properly. It can be used in may way.
-- `git diff` : It shows the changes you have done after the last commit
-- `git diff main` : This shows the (committed) difference between `main` and this branch.
+- `git diff`        : It shows the changes you have done after the last commit
+- `git diff main`   : This shows the (committed) difference between `main` and this branch.
 - any other possible combinations.
 
 ### GIT LOG
-I usually push the changes to remote, and then browse it on a browser to check the logs. But one might execute `git log` in local machine to see the commit log.
+I usually push the changes to remote, and then browse it on a browser to check the logs. But one might execute `git log` in local machine to see the commit log. Useful formats,
+```
+git log                 : shows commit info
+git log -p              : shows changes
+git log -p <filename>   : shows changes in a specific file
+```
 
 ### GIT REFLOG
 This shows the position of `head`. It is useful if you want to reset to any previous commit, using `git reset --hard bd6903f`. But please try not use it, better to create a branch from that specific commit. It is written above.
