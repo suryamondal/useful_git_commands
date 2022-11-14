@@ -70,11 +70,21 @@ graph TD;
     id13-.->id30[git checkout main]-.->id31[git pull]-.->id32[git checkout newbranch]-.->id33[git merge main]-.->id13;
 ```
 
-### Local Repository:
+## If possible, create the GIT repository first in remote. Then clone it in your local PC.
+Use the following command to get the remote repository in your local PC.
+```
+git clone git@github.com:suryamondal/useful_git_commands.git
+cd useful_git_commands
+```
+This repository comes loaded with necessary files which are required for `git`.
+
+If you already started working at the local PC, then you have to initialise the `git` repository first in your local directory.
+
+### Initialise the Local Repository:
 A git `repository` is synonymous to a `folder` or `directory`, but actually not. A git repository
 resides inside a physical directory, and that is the end of the similarity.
 
-So, we create a folder/directory named `useful_git_commands`. Then we go inside it. We then execute the following command.
+We go inside the folder/directory named `useful_git_commands`. We then execute the following command.
 ```
 git init
 ```
